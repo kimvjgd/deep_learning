@@ -7,4 +7,8 @@ CNN개념 https://cafe.naver.com/dongpakkaflutter/223
 
 CNN구축 https://cafe.naver.com/dongpakkaflutter/224 
 
+RNN개념 https://cafe.naver.com/dongpakkaflutter/225 
+
+RNN구축 https://cafe.naver.com/dongpakkaflutter/226 
+
 ## Google Colab을 사용
