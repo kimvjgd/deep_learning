@@ -14,4 +14,4 @@
 ## Google Colab을 사용
 
 기타 공부
-[basic deep learning][https://cafe.naver.com/dongpakkaflutter]
+[basic deep learning][https://cafe.naver.com/dongpakkaflutter/233]
