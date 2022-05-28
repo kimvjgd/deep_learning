@@ -164,4 +164,30 @@ for data_idx, (x, y) in enumerate(zip(x_data, y_data)):
   J = -(y*np.log(pred) + (1-y)*np.log(1-pred))
   J_track.append(J)
   
-  break
+  # jacobians
+  dJ_dpred = (pred - y)/(pred*(1-pred))
+  dpred_dz = pred*(1-pred)
+  dz_dw = x
+  dz_db = 1
+  
+  # backpropagation
+  dJ_dz = dJ_dpred * dpred_dz
+  dJ_dw = dJ_dz * dz_dw
+  dJ_db = dJ_dz * dz_db
+  
+  # parameter update
+  w = w - lr*dJ_dw
+  b = b - lr*dJ_db
+
+# visualized loss
+fig, axes = plt.subplots(2, 1, figsize=(20,10)) 
+axes[0].plot(J_track)
+axes[0].set_ylabel("BCCE", fontsize=30)
+axes[0].tick_params(labelsize=30)
+
+axes[1].axhline(y=t_w, color='darkred', linestyle=':')
+axes[1].plot(w_track, color='darakred')
+axes[1].axhline(y=t_b, color='darkblue', linestyle=':')
+axes[1].plot(b_track, color='darkblue')
+axes[1].tick_params(labelsize=30)
+
